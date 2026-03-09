@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pokemon hangman game</title>
+        <link rel="stylesheet" href = "{{ url_for('static', path='style.css')}}">
+    </head>
+    <body>
+        <div class="container">
+
+            {% for info in final_info %}
+
+            <p id="pokemon_name" class="name">{{ info.name }}</p>
+            <img id="pokemon_sprite" src="{{ info.sprite }}" alt="{{ info.name }}">
+            <p id="pokemon_id" class="id">id: {{ info.id }}</p>
+
+            {% endfor %}
+
+            <button onclick="getRandomPokemon()">New Pokemon!</button>
+        </div>
+        <script src="{{ url_for('static', path='script.js') }}"></script>
+
+        <footer>
+            <p class="footer">Mikołaj Pióro</p>
+        </footer>
+    </body>
+
+
+</html>
